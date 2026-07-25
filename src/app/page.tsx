@@ -306,7 +306,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-canopux-black">
-        <div className="container-page py-24 sm:py-32 lg:py-36">
+        <div className="container-page py-20 sm:py-32 lg:py-36">
           <SectionReveal>
             <figure className="mx-auto max-w-3xl text-center">
               <blockquote>

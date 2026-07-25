@@ -39,7 +39,7 @@ export const caseStudies: CaseStudy[] = [
     status: "Live",
     liveUrl: "https://www.jjinstitute.in/",
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1696395050055-eb7a315bb1cb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWR1Y2F0aW9ufGVufDB8fDB8fHww",
     imageAlt: "Students collaborating on campus with laptops",
   },
   {
@@ -170,5 +170,5 @@ export const featuredProduct = {
   stack: ["React", "TypeScript", "Node.js", "MongoDB"],
   href: "/products#student-management-system",
   image:
-    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
+    "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1920&q=80](https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1920&q=80",
 } as const;

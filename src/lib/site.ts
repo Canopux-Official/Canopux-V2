@@ -42,6 +42,7 @@ export const siteConfig = {
 export type NavItem = (typeof siteConfig.nav)[number];
 
 /** Home hero value pillars — free Unsplash photos (Unsplash License). */
+/** Home hero value pillars — free Unsplash photos (Unsplash License). */
 export const pillars = [
   {
     id: "digital-presence",
@@ -49,9 +50,9 @@ export const pillars = [
     summary:
       "Striking landing pages, e-commerce stores, and cohesive brand design that help small businesses look established from day one.",
     href: "/services#branding-digital-design",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "Designer reviewing brand materials on a desk",
+    // Visual: A striking, minimalist glowing globe/network interface over a deep black background—capturing global presence.
+    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Minimalist, sleek dark-themed digital interface layout on a premium display",
   },
   {
     id: "web-mobile-apps",
@@ -59,9 +60,10 @@ export const pillars = [
     summary:
       "High-performance full-stack applications with robust admin portals and secure access for teams and customers.",
     href: "/services#web-mobile-development",
+    // Visual: Clean, high-contrast code/interface glowing on a sleek bezel-less screen, reminiscent of SpaceX console hardware.
     image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "Person using a mobile application",
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Futuristic lines of clean code glowing on a high-performance monitor",
   },
   {
     id: "data-driven-growth",
@@ -69,9 +71,10 @@ export const pillars = [
     summary:
       "Integrated SEO, GA4 analytics, and automated lead generation so marketing spend turns into measurable pipeline.",
     href: "/services#marketing-analytics-growth",
+    // Visual: Elegant, glowing server stacks or telemetry data data streams in a clean, dark tech hub.
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "Analytics dashboard charts on a laptop screen",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "High-tech server room telemetry representing data-driven scale and growth pipelines",
   },
   {
     id: "ai-automation",
@@ -79,8 +82,9 @@ export const pillars = [
     summary:
       "Next-generation AI models, intelligent notifications, and seamless API integrations that streamline operations.",
     href: "/services#artificial-intelligence",
+    // Visual: A stunning, Starlink-esque view of a bright satellite constellation/orbital network pattern firing data across the dark.
     image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "Abstract visualization representing artificial intelligence",
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Sleek orbital data network visualization representing next-gen AI automation",
   },
 ] as const;
