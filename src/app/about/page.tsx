@@ -56,7 +56,7 @@ export default function AboutPage() {
           overlay="heavy"
           tone="dark"
         >
-          <div className="container-page flex min-h-[85vh] flex-col justify-center pb-20 pt-28">
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
             <p className="eyebrow">{mission.eyebrow}</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
               <span className="block text-canopux-white">
@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       {/* Highlight cards — x.ai company style */}
-      <section className="bg-canopux-black py-16 sm:py-20">
+      <section className="bg-canopux-black pb-16 pt-[18vh] sm:pb-20">
         <div className="container-page">
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
             {aboutHighlights.map((item) => {

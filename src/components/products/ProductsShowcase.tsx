@@ -13,6 +13,7 @@ import {
 } from "react";
 import type { Product } from "@/content/products";
 import { siteConfig } from "@/lib/site";
+import { SectionReveal } from "@/components/ui/SectionReveal";
 
 type ProductsShowcaseProps = {
   products: Product[];
@@ -186,56 +187,59 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
 
   return (
     <>
-      <div className="container-page pb-20 pt-4 sm:pb-28">
+      <div className="container-page pb-20 pt-[18vh] sm:pb-28">
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
           {products.map((product) => (
-            <article
-              key={product.slug}
-              id={product.slug}
-              ref={(node) => {
-                if (node) cardRefs.current.set(product.slug, node);
-                else cardRefs.current.delete(product.slug);
-              }}
-              className="scroll-mt-28 flex min-h-[17rem] flex-col justify-between rounded-2xl bg-[#171717] p-7 sm:min-h-[18.5rem] sm:p-8 lg:min-h-[20rem] lg:p-9"
-            >
-              <div>
-                <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-canopux-white sm:text-[1.65rem]">
-                  {product.title}
-                </h2>
-                <p className="mt-4 text-[15px] leading-relaxed text-canopux-silver">
-                  {product.summary}
-                </p>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => open(product.slug)}
-                className="mt-8 inline-flex w-fit items-center gap-1.5 text-[15px] text-canopux-silver transition-colors hover:text-canopux-white"
+            <SectionReveal key={product.slug} className="h-full">
+              <article
+                id={product.slug}
+                ref={(node) => {
+                  if (node) cardRefs.current.set(product.slug, node);
+                  else cardRefs.current.delete(product.slug);
+                }}
+                className="scroll-mt-28 flex h-full min-h-[17rem] flex-col justify-between rounded-2xl bg-[#171717] p-7 sm:min-h-[18.5rem] sm:p-8 lg:min-h-[20rem] lg:p-9"
               >
-                Learn More
-                <span aria-hidden>→</span>
-              </button>
-            </article>
+                <div>
+                  <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-canopux-white sm:text-[1.65rem]">
+                    {product.title}
+                  </h2>
+                  <p className="mt-4 text-[15px] leading-relaxed text-canopux-silver">
+                    {product.summary}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => open(product.slug)}
+                  className="mt-8 inline-flex w-fit items-center gap-1.5 text-[15px] text-canopux-silver transition-colors hover:text-canopux-white"
+                >
+                  Learn More
+                  <span aria-hidden>→</span>
+                </button>
+              </article>
+            </SectionReveal>
           ))}
 
-          <article className="flex min-h-[17rem] flex-col justify-between rounded-2xl border border-dashed border-canopux-line bg-transparent p-7 sm:min-h-[18.5rem] sm:p-8 lg:min-h-[20rem] lg:p-9">
-            <div>
-              <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-canopux-white sm:text-[1.65rem]">
-                Explore our work
-              </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-canopux-silver">
-                See how these systems ship in real institutes, retail, and
-                operations projects.
-              </p>
-            </div>
-            <Link
-              href="/portfolio"
-              className="mt-8 inline-flex w-fit items-center gap-1.5 text-[15px] text-canopux-silver transition-colors hover:text-canopux-white"
-            >
-              View all case studies
-              <span aria-hidden>→</span>
-            </Link>
-          </article>
+          <SectionReveal className="h-full">
+            <article className="flex h-full min-h-[17rem] flex-col justify-between rounded-2xl border border-dashed border-canopux-line bg-transparent p-7 sm:min-h-[18.5rem] sm:p-8 lg:min-h-[20rem] lg:p-9">
+              <div>
+                <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-canopux-white sm:text-[1.65rem]">
+                  Explore our work
+                </h2>
+                <p className="mt-4 text-[15px] leading-relaxed text-canopux-silver">
+                  See how these systems ship in real institutes, retail, and
+                  operations projects.
+                </p>
+              </div>
+              <Link
+                href="/portfolio"
+                className="mt-8 inline-flex w-fit items-center gap-1.5 text-[15px] text-canopux-silver transition-colors hover:text-canopux-white"
+              >
+                View all case studies
+                <span aria-hidden>→</span>
+              </Link>
+            </article>
+          </SectionReveal>
         </div>
       </div>
 
@@ -303,6 +307,12 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
                   {active.detail}
                 </p>
 
+                {active.uniqueness ? (
+                  <p className="mt-4 text-body leading-relaxed text-canopux-silver/80">
+                    {active.uniqueness}
+                  </p>
+                ) : null}
+
                 <h3 className="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-canopux-silver">
                   Features included
                 </h3>
@@ -318,6 +328,17 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
                   ))}
                 </ul>
 
+                {active.stack && active.stack.length > 0 ? (
+                  <>
+                    <h3 className="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-canopux-silver">
+                      Tech stack
+                    </h3>
+                    <p className="mt-3 text-body-sm text-canopux-silver">
+                      {active.stack.join(" · ")}
+                    </p>
+                  </>
+                ) : null}
+
                 <p className="mt-8 border-t border-white/10 pt-6 text-body-sm text-canopux-silver">
                   <span className="font-display font-semibold text-canopux-white">
                     Outcome:{" "}
@@ -326,17 +347,31 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3 pb-2">
-                  <a
-                    href={siteConfig.whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-lg bg-canopux-white px-5 py-2.5 font-sans text-sm font-semibold text-canopux-black transition-opacity hover:opacity-90"
-                  >
-                    Ask about this product
-                    <span aria-hidden className="ml-2">
-                      →
-                    </span>
-                  </a>
+                  {active.liveUrl ? (
+                    <a
+                      href={active.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-lg bg-canopux-white px-5 py-2.5 font-sans text-sm font-semibold text-canopux-black transition-opacity hover:opacity-90"
+                    >
+                      View live product
+                      <span aria-hidden className="ml-2">
+                        →
+                      </span>
+                    </a>
+                  ) : (
+                    <a
+                      href={siteConfig.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-lg bg-canopux-white px-5 py-2.5 font-sans text-sm font-semibold text-canopux-black transition-opacity hover:opacity-90"
+                    >
+                      Ask about this product
+                      <span aria-hidden className="ml-2">
+                        →
+                      </span>
+                    </a>
+                  )}
                   <button
                     type="button"
                     onClick={close}

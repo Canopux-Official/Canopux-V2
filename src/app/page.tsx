@@ -131,11 +131,12 @@ export default function HomePage() {
       <section className="bg-canopux-black">
         <MediaBleed
           label="ready-to-deploy products"
-          alt="Students collaborating — Educational Management Suite"
+          alt="Students collaborating — Student Management System"
           src={featuredProduct.image}
           aspect="tall"
           overlay="heavy"
           showPlaceholderBadge={false}
+          className="!h-auto !min-h-[85svh]"
         >
           <div className="container-page pt-24 pb-10 sm:pt-32 sm:pb-12">
             <SectionReveal>

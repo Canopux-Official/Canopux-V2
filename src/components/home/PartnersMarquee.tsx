@@ -144,7 +144,7 @@ export function PartnersMarquee() {
       }
     >
       <div className="container-page relative z-[3] mb-10 sm:mb-12">
-        <p className="eyebrow text-canopux-black/50">Our Partners</p>
+        <p className="eyebrow font-semibold text-canopux-black/50">Our Partners</p>
         <h2 className="sr-only">Technology Partners and Clients of Canopux</h2>
       </div>
 

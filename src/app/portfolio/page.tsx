@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/Button";
 import { MediaBleed } from "@/components/ui/MediaBleed";
 import { BuildNextCta } from "@/components/ui/BuildNextCta";
 import { WorkScrollShowcase } from "@/components/work/WorkScrollShowcase";
@@ -9,13 +10,15 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Work — Case Studies for Growing Businesses",
   description:
-    "Explore Canopux case studies across education, retail operations, events, and automotive verification — real systems built for business outcomes.",
+    "Explore Canopux work across education, hospitality, conferences, industrial retail, schools, AI hiring, and more — live client sites and platforms.",
   path: "/portfolio",
   keywords: [
     "Canopux case studies",
-    "student management system",
-    "BuildCentral",
-    "small business software",
+    "JJ Institute",
+    "Priyaanshii Tasteworks",
+    "IndoCrypt 2025",
+    "Student Management System",
+    "AI ATS",
   ],
 });
 
@@ -32,24 +35,29 @@ export default function PortfolioPage() {
       <section>
         <MediaBleed
           label="portfolio hero"
-          alt="Product team reviewing systems work on screens"
-          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2400&q=80"
-          aspect="cinema"
+          alt="Placeholder full-bleed hero for Canopux work"
+          aspect="tall"
           kenBurns
           overlay="heavy"
-          priority
-          showPlaceholderBadge={false}
+          tone="dark"
         >
-          <div className="container-page flex min-h-[70vh] flex-col justify-center py-28">
-            <p className="eyebrow">Work</p>
-            <h1 className="mt-5 max-w-2xl font-display text-4xl font-semibold tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
-              <span className="block">Outcomes first.</span>
-              <span className="block">Systems that ship.</span>
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
+            <h1 className="max-w-2xl">
+              <span className="block font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
+                Built
+              </span>
+              <span className="mt-5 block max-w-xl text-base leading-relaxed text-canopux-silver sm:text-lg">
+                for growing businesses.
+              </span>
             </h1>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-canopux-silver sm:text-lg">
-              Scroll through selected builds — the brief updates as each project
-              comes into view.
-            </p>
+            <div className="mt-8">
+              <Button href={siteConfig.whatsappUrl} external>
+                Start your project
+                <span aria-hidden className="text-base leading-none">
+                  →
+                </span>
+              </Button>
+            </div>
           </div>
         </MediaBleed>
       </section>

@@ -157,12 +157,12 @@ export function WorkScrollShowcase({ studies }: WorkScrollShowcaseProps) {
               </div>
 
               <a
-                href={siteConfig.whatsappUrl}
+                href={active.liveUrl ?? siteConfig.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2 font-sans text-sm font-semibold text-canopux-white transition-opacity hover:opacity-80"
               >
-                Discuss a similar project
+                {active.liveUrl ? "Visit live site" : "Discuss a similar project"}
                 <span aria-hidden>→</span>
               </a>
             </div>
@@ -171,7 +171,7 @@ export function WorkScrollShowcase({ studies }: WorkScrollShowcaseProps) {
       </div>
 
       {/* Mobile: stacked text panels */}
-      <div className="lg:hidden">
+      <div className="pt-[18vh] lg:hidden">
         {studies.map((study, index) => (
           <article key={study.slug} className="px-5 py-12 sm:px-8">
             <div className="rounded-2xl border border-white/10 bg-[#141414] p-6 sm:p-8">
@@ -192,6 +192,17 @@ export function WorkScrollShowcase({ studies }: WorkScrollShowcaseProps) {
                 </span>
                 {study.outcome}
               </p>
+              {study.liveUrl ? (
+                <a
+                  href={study.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-semibold text-canopux-white transition-opacity hover:opacity-80"
+                >
+                  Visit live site
+                  <span aria-hidden>→</span>
+                </a>
+              ) : null}
             </div>
           </article>
         ))}

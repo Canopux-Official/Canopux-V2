@@ -22,7 +22,8 @@ const aspectClass = {
   screen: "min-h-[100svh]",
   cinema: "min-h-[70vh] aspect-[16/9]",
   square: "aspect-square min-h-[20rem]",
-  tall: "min-h-[85vh]",
+  /** Shared height for Services, Work, Products, About, Blog heroes */
+  tall: "min-h-[100svh]",
 } as const;
 
 const overlayClass = {
@@ -100,7 +101,7 @@ export function MediaBleed({
       )}
 
       {children && (
-        <div className="relative z-10 flex h-full min-h-[inherit] flex-col justify-end">
+        <div className="relative z-10 flex min-h-[inherit] flex-col">
           {children}
         </div>
       )}

@@ -10,13 +10,13 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Products — Ready-to-Deploy Digital Systems",
   description:
-    "Canopux ready-to-deploy products for small businesses: Educational Management Suite, E-Commerce & Retail Hub, Business Operations CRM, and Identity Verification API.",
+    "Canopux products: Student Management System, Auto Check vehicle verification, E-Commerce & Retail Hub, and Business Operations CRM.",
   path: "/products",
   keywords: [
     "student management system",
+    "auto check vehicle verification",
     "e-commerce platform",
     "CRM portal",
-    "OTP verification API",
     "ready to deploy software",
   ],
 });
@@ -40,7 +40,7 @@ export default function ProductsPage() {
           overlay="heavy"
           tone="dark"
         >
-          <div className="container-page flex min-h-[85vh] flex-col justify-center pb-20 pt-28">
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
             <h1 className="max-w-2xl">
               <span className="block font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
                 Systems

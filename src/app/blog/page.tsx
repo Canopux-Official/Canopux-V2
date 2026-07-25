@@ -19,7 +19,7 @@ export const metadata = buildMetadata({
 
 export default function BlogIndexPage({ searchParams }: BlogIndexProps) {
   const requestedPage = Number.parseInt(searchParams.page ?? "1", 10);
-  const { posts, currentPage, totalPages, totalPosts } = paginatePosts(
+  const { posts, currentPage, totalPages } = paginatePosts(
     Number.isFinite(requestedPage) ? requestedPage : 1,
     6,
   );
@@ -37,26 +37,26 @@ export default function BlogIndexPage({ searchParams }: BlogIndexProps) {
         <MediaBleed
           label="blog hero environment"
           alt="Placeholder full-bleed media for Canopux blog"
-          aspect="cinema"
+          aspect="tall"
           kenBurns
           overlay="heavy"
+          tone="dark"
         >
-          <div className="container-page pb-16 pt-32 sm:pb-20 sm:pt-40">
-            <p className="eyebrow">Blog</p>
-            <h1 className="display-title mt-5 max-w-3xl">
-              <span className="block">Notes on building</span>
-              <span className="block">durable products.</span>
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
+            <h1 className="max-w-2xl">
+              <span className="block font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
+                Insights
+              </span>
+              <span className="mt-5 block max-w-xl text-base leading-relaxed text-canopux-silver sm:text-lg">
+                for curious builders.
+              </span>
             </h1>
-            <p className="section-lead">
-              {totalPosts} articles on web architecture, AI adoption, and cloud
-              foundations — written to be useful, without fabricated statistics.
-            </p>
           </div>
         </MediaBleed>
       </section>
 
       <section className="surface-light">
-        <div className="container-page py-16 sm:py-24">
+        <div className="container-page pb-16 pt-[18vh] sm:pb-24">
           <div className="divide-y divide-canopux-black/10 border-y border-canopux-black/10">
             {posts.map((post) => (
               <article key={post.slug} className="py-10 sm:py-12">

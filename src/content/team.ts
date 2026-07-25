@@ -79,7 +79,7 @@ export const milestones: Milestone[] = [
     date: "2024",
     title: "Product packages take shape",
     summary:
-      "Educational Suite, retail hub, CRM, and verification layers matured into ready-to-deploy offerings.",
+      "Student Management System, Auto Check, retail hub, and CRM matured into ready-to-deploy offerings.",
   },
   {
     date: "2025",

@@ -54,7 +54,7 @@ export default function ServicesPage() {
           overlay="heavy"
           tone="dark"
         >
-          <div className="container-page flex min-h-[85vh] flex-col justify-center pb-20 pt-28">
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
             <h1 className="max-w-2xl">
               <span className="block font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
                 Services
@@ -75,7 +75,7 @@ export default function ServicesPage() {
         </MediaBleed>
       </section>
 
-      <section className="bg-canopux-black py-24 sm:py-32">
+      <section className="bg-canopux-black pb-24 pt-[18vh] sm:pb-32">
         <div className="container-page">
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
             {serviceCategories.map((category) => (
