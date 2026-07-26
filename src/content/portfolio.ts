@@ -170,5 +170,5 @@ export const featuredProduct = {
   stack: ["React", "TypeScript", "Node.js", "MongoDB"],
   href: "/products#student-management-system",
   image:
-    "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1920&q=80](https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1920&q=80",
 } as const;

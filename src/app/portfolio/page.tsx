@@ -19,6 +19,7 @@ export const metadata = buildMetadata({
     "IndoCrypt 2025",
     "Student Management System",
     "AI ATS",
+    "web development portfolio India",
   ],
 });
 

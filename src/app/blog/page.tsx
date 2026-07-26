@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { MediaBleed } from "@/components/ui/MediaBleed";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
@@ -9,13 +10,42 @@ type BlogIndexProps = {
   searchParams: { page?: string };
 };
 
-export const metadata = buildMetadata({
-  title: "Blog, Web, App & AI Delivery Notes",
-  description:
-    "Practical articles from Canopux on maintainable web stacks, AI feature adoption, and cloud foundations for growing product teams.",
-  path: "/blog",
-  keywords: ["software engineering blog", "web development", "AI product", "DevOps"],
-});
+export function generateMetadata({
+  searchParams,
+}: BlogIndexProps): Metadata {
+  const requestedPage = Number.parseInt(searchParams.page ?? "1", 10);
+  const page =
+    Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1;
+
+  if (page > 1) {
+    return buildMetadata({
+      title: `Blog, page ${page}`,
+      description:
+        "Practical articles from Canopux on maintainable web stacks, AI feature adoption, and cloud foundations for growing product teams.",
+      path: `/blog?page=${page}`,
+      noIndex: true,
+      keywords: [
+        "software engineering blog",
+        "web development",
+        "AI product",
+        "DevOps",
+      ],
+    });
+  }
+
+  return buildMetadata({
+    title: "Blog, Web, App & AI Delivery Notes",
+    description:
+      "Practical articles from Canopux on maintainable web stacks, AI feature adoption, and cloud foundations for growing product teams.",
+    path: "/blog",
+    keywords: [
+      "software engineering blog",
+      "web development",
+      "AI product",
+      "DevOps",
+    ],
+  });
+}
 
 export default function BlogIndexPage({ searchParams }: BlogIndexProps) {
   const requestedPage = Number.parseInt(searchParams.page ?? "1", 10);
@@ -36,7 +66,7 @@ export default function BlogIndexPage({ searchParams }: BlogIndexProps) {
       <section>
         <MediaBleed
           label="blog hero environment"
-          alt="Placeholder full-bleed media for Canopux blog"
+          alt="Dark abstract environment representing Canopux engineering insights"
           aspect="tall"
           kenBurns
           overlay="heavy"
@@ -62,7 +92,11 @@ export default function BlogIndexPage({ searchParams }: BlogIndexProps) {
             {posts.map((post) => (
               <article key={post.slug} className="py-10 sm:py-12">
                 <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-canopux-black/45">
-                  {post.publishedAt} · {post.readingTimeMinutes} min read
+                  <time dateTime={`${post.publishedAt}T00:00:00+05:30`}>
+                    {post.publishedAt}
+                  </time>
+                  {" · "}
+                  {post.readingTimeMinutes} min read
                 </p>
                 <h2 className="mt-4 max-w-3xl font-display text-2xl font-semibold tracking-[-0.03em] text-canopux-black sm:text-3xl">
                   <Link

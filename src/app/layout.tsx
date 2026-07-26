@@ -2,7 +2,12 @@ import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { JsonLd, organizationJsonLd } from "@/components/seo/JsonLd";
+import {
+  JsonLd,
+  localBusinessJsonLd,
+  organizationJsonLd,
+  websiteJsonLd,
+} from "@/components/seo/JsonLd";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -14,15 +19,7 @@ const interTight = Inter_Tight({
 });
 
 const inter = Inter({
-  subsets: [
-    "latin",
-    "latin-ext",
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "greek-ext",
-    "vietnamese",
-  ],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -49,40 +46,63 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  alternates: {
+    canonical: siteConfig.url,
+    languages: {
+      en: siteConfig.url,
+      "en-IN": siteConfig.url,
+      "x-default": siteConfig.url,
+    },
+    types: {
+      "application/rss+xml": `${siteConfig.url}/rss.xml`,
+    },
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: siteConfig.locale,
+    alternateLocale: [...siteConfig.alternateLocales],
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name}, Software Development Company`,
+    title: `${siteConfig.name}, Digital Solutions for Small Businesses`,
     description: siteConfig.description,
     images: [
       {
         url: "/og-default.png",
         width: 1200,
         height: 630,
-        alt: "Canopux, the guide star for digital products",
+        alt: "Canopux, digital solutions for small businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name}, Software Development Company`,
+    title: `${siteConfig.name}, Digital Solutions for Small Businesses`,
     description: siteConfig.description,
     images: ["/og-default.png"],
+    site: siteConfig.social.twitterHandle,
+    creator: siteConfig.social.twitterHandle,
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: [
       { url: "/icons/favicon.svg", type: "image/svg+xml" },
       { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
     apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
   },
   manifest: "/manifest.webmanifest",
+  category: "technology",
 };
 
 export const viewport: Viewport = {
@@ -100,11 +120,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang={siteConfig.language}
       className={`${interTight.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-canopux-black font-sans text-canopux-white antialiased">
         <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
+        <JsonLd data={localBusinessJsonLd()} />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-canopux-signal focus:px-4 focus:py-2 focus:text-canopux-white"

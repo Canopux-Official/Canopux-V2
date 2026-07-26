@@ -16,12 +16,14 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "About Canopux, Digital Partners for Small Business",
   description:
-    "Canopux helps small businesses grow with digital presence, custom apps, analytics, automation, and AI. Founded in 2023 and headquartered in Bhubaneswar, India.",
+    "Canopux helps small businesses grow with digital presence, custom apps, analytics, automation, and AI. Founded in 2023 and headquartered in Bhubaneswar, Odisha, India.",
   path: "/about",
   keywords: [
     "about Canopux",
     "small business digital partner",
     "Bhubaneswar software company",
+    "Odisha IT company",
+    "software development India",
   ],
 });
 

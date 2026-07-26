@@ -8,7 +8,7 @@ import {
   breadcrumbJsonLd,
   serviceListJsonLd,
 } from "@/components/seo/JsonLd";
-import { serviceCategories, services } from "@/content/services";
+import { serviceCategories } from "@/content/services";
 import { buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
@@ -23,6 +23,7 @@ export const metadata = buildMetadata({
     "SEO GA4",
     "AI automation services",
     "brand identity design",
+    "software company Bhubaneswar",
   ],
 });
 
@@ -37,10 +38,11 @@ export default function ServicesPage() {
       />
       <JsonLd
         data={serviceListJsonLd(
-          services.map((service) => ({
-            name: service.title,
-            description: service.summary,
-            path: `/services`,
+          serviceCategories.map((category) => ({
+            name: category.title,
+            description: category.intro,
+            path: `/services#${category.id}`,
+            serviceType: category.title,
           })),
         )}
       />
