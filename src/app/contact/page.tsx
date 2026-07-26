@@ -4,6 +4,7 @@ import { SectionReveal } from "@/components/ui/SectionReveal";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
+import image from '../../../public/bg-image/contact.png'
 
 export const metadata = buildMetadata({
   title: "Contact Canopux, WhatsApp, Email & Office",
@@ -83,6 +84,7 @@ export default function ContactPage() {
           kenBurns
           overlay="heavy"
           tone="dark"
+          src='/bg-image/contact.png'
         >
           <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-28 sm:pb-20 sm:pt-28">
             <p className="eyebrow">Contact</p>
