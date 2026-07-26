@@ -63,8 +63,8 @@ export const aboutHighlights = [
   {
     title: "Contact",
     summary: "Message us on WhatsApp to start a free scoping conversation.",
-    href: "https://wa.me/918260783152",
-    cta: "Chat on WhatsApp",
+    href: "/contact",
+    cta: "Get in touch",
   },
 ] as const;
 

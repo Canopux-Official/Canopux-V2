@@ -25,13 +25,7 @@ const nextConfig = {
     ];
   },
   async redirects() {
-    return [
-      {
-        source: "/contact",
-        destination: "https://wa.me/918260783152",
-        permanent: false,
-      },
-    ];
+    return [];
   },
 };
 

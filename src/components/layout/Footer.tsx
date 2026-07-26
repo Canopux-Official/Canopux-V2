@@ -10,7 +10,7 @@ const exploreLinks = [
   { href: "/portfolio", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
-  { href: siteConfig.whatsappUrl, label: "Contact", external: true },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 export function Footer() {
@@ -35,23 +35,12 @@ export function Footer() {
           <ul className="mt-5 space-y-3">
             {exploreLinks.map((link) => (
               <li key={link.href}>
-                {"external" in link && link.external ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-body-sm text-canopux-silver transition-opacity hover:text-canopux-white"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    href={link.href}
-                    className="text-body-sm text-canopux-silver transition-opacity hover:text-canopux-white"
-                  >
-                    {link.label}
-                  </Link>
-                )}
+                <Link
+                  href={link.href}
+                  className="text-body-sm text-canopux-silver transition-opacity hover:text-canopux-white"
+                >
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>

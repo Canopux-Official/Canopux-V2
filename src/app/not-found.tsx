@@ -27,8 +27,8 @@ export default function NotFound() {
           <Button href="/services" variant="secondary">
             Services
           </Button>
-          <Button href={siteConfig.whatsappUrl} external variant="secondary">
-            WhatsApp us
+          <Button href="/contact" variant="secondary">
+            Contact
           </Button>
         </div>
         <ul className="mt-12 flex flex-wrap gap-x-6 gap-y-3 font-mono text-[11px] uppercase tracking-[0.16em] text-canopux-silver">
