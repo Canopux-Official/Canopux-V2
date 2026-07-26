@@ -41,8 +41,7 @@ export const siteConfig = {
 
 export type NavItem = (typeof siteConfig.nav)[number];
 
-/** Home hero value pillars — free Unsplash photos (Unsplash License). */
-/** Home hero value pillars — free Unsplash photos (Unsplash License). */
+/** Home hero value pillars, free Unsplash photos (Unsplash License). */
 export const pillars = [
   {
     id: "digital-presence",
@@ -50,7 +49,7 @@ export const pillars = [
     summary:
       "Striking landing pages, e-commerce stores, and cohesive brand design that help small businesses look established from day one.",
     href: "/services#branding-digital-design",
-    // Visual: A striking, minimalist glowing globe/network interface over a deep black background—capturing global presence.
+    // Visual: A striking, minimalist glowing globe/network interface over a deep black background, capturing global presence.
     image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "Minimalist, sleek dark-themed digital interface layout on a premium display",
   },

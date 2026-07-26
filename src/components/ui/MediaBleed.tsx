@@ -20,8 +20,8 @@ type MediaBleedProps = {
 
 const aspectClass = {
   screen: "min-h-[100svh]",
-  cinema: "min-h-[70vh] aspect-[16/9]",
-  square: "aspect-square min-h-[20rem]",
+  cinema: "aspect-[16/9] min-h-0",
+  square: "aspect-square min-h-[12rem] sm:min-h-[20rem]",
   /** Shared height for Services, Work, Products, About, Blog heroes */
   tall: "min-h-[100svh]",
 } as const;

@@ -12,7 +12,7 @@ export function Logo({
   className = "",
   priority = false,
 }: LogoProps) {
-  // Nav and footer use dark surfaces — white wordmark from /public/icons/CANOPUX.png
+  // Nav and footer use dark surfaces, white wordmark from /public/icons/CANOPUX.png
   const src =
     variant === "dark" ? "/icons/CANOPUX.png" : "/brand/Canopux_black.png";
 
@@ -27,7 +27,7 @@ export function Logo({
         alt="Canopux wordmark with ringed planet mark replacing the letter O"
         width={160}
         height={36}
-        className="h-6 w-auto sm:h-7"
+        className="h-5 w-auto object-contain object-left sm:h-7"
         priority={priority}
       />
     </Link>

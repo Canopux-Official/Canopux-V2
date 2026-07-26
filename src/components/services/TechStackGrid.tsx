@@ -10,7 +10,7 @@ export function TechStackGrid() {
             Stacks we ship with
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-canopux-silver sm:text-lg">
-            Modern foundations for web, mobile, AI, and infrastructure — chosen
+            Modern foundations for web, mobile, AI, and infrastructure, chosen
             for speed, clarity, and long-term maintainability.
           </p>
         </SectionReveal>

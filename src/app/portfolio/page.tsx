@@ -8,9 +8,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Work — Case Studies for Growing Businesses",
+  title: "Work, Case Studies for Growing Businesses",
   description:
-    "Explore Canopux work across education, hospitality, conferences, industrial retail, schools, AI hiring, and more — live client sites and platforms.",
+    "Explore Canopux work across education, hospitality, conferences, industrial retail, schools, AI hiring, and more, live client sites and platforms.",
   path: "/portfolio",
   keywords: [
     "Canopux case studies",
@@ -41,17 +41,18 @@ export default function PortfolioPage() {
           overlay="heavy"
           tone="dark"
         >
-          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
-            <h1 className="max-w-2xl">
-              <span className="block font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-28 sm:pb-20 sm:pt-28">
+            <p className="eyebrow">Our work</p>
+            <h1 className="mt-5 max-w-2xl">
+              <span className="block font-display text-[1.75rem] font-semibold leading-[1.1] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
                 Built
               </span>
-              <span className="mt-5 block max-w-xl text-base leading-relaxed text-canopux-silver sm:text-lg">
+              <span className="mt-4 block max-w-xl text-base leading-relaxed text-canopux-silver sm:mt-5 sm:text-lg">
                 for growing businesses.
               </span>
             </h1>
             <div className="mt-8">
-              <Button href={siteConfig.whatsappUrl} external>
+              <Button href={siteConfig.whatsappUrl} external className="w-full sm:w-auto">
                 Start your project
                 <span aria-hidden className="text-base leading-none">
                   →

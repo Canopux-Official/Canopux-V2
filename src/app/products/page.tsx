@@ -8,15 +8,13 @@ import { buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Products — Ready-to-Deploy Digital Systems",
+  title: "Products, Ready-to-Deploy Digital Systems",
   description:
-    "Canopux products: Student Management System, Auto Check vehicle verification, E-Commerce & Retail Hub, and Business Operations CRM.",
+    "Canopux products: Student Management System and Auto Check vehicle verification.",
   path: "/products",
   keywords: [
     "student management system",
     "auto check vehicle verification",
-    "e-commerce platform",
-    "CRM portal",
     "ready to deploy software",
   ],
 });
@@ -40,12 +38,13 @@ export default function ProductsPage() {
           overlay="heavy"
           tone="dark"
         >
-          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
-            <h1 className="max-w-2xl">
-              <span className="block font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-28 sm:pb-20 sm:pt-28">
+            <p className="eyebrow">Our products</p>
+            <h1 className="mt-5 max-w-2xl">
+              <span className="block font-display text-[1.75rem] font-semibold leading-[1.1] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
                 Systems
               </span>
-              <span className="mt-5 block max-w-xl text-base leading-relaxed text-canopux-silver sm:text-lg">
+              <span className="mt-4 block max-w-xl text-base leading-relaxed text-canopux-silver sm:mt-5 sm:text-lg">
                 for every growing team.
               </span>
             </h1>

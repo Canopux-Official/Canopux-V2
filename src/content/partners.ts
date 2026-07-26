@@ -70,7 +70,7 @@ export const partners: Partner[] = [
   {
     name: "Sri Jagannath Traders",
     alt: "Sri Jagannath Traders logo",
-    src: "/partners/sri-jagannath-traders.png",
+    src: "/sri-jagannath-traders-logo-black.png",
     url: "https://www.srijagannathtraders.in/",
   },
 ].sort((a, b) => a.name.localeCompare(b.name));

@@ -3,7 +3,7 @@ type MarkGlyphProps = {
   size?: number;
 };
 
-/** Small ringed-planet mark — nav/footer/section divider only. Never hero-scale. */
+/** Small ringed-planet mark, nav/footer/section divider only. Never hero-scale. */
 export function MarkGlyph({ className = "", size = 20 }: MarkGlyphProps) {
   return (
     <svg

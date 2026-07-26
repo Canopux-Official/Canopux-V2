@@ -14,7 +14,7 @@ export const values = [
   {
     title: "Precision from first principles",
     description:
-      "We break problems down to what actually matters for the business — then build only what creates leverage.",
+      "We break problems down to what actually matters for the business, then build only what creates leverage.",
   },
   {
     title: "No goal is too ambitious",
@@ -24,7 +24,7 @@ export const values = [
   {
     title: "Move quickly and fix things",
     description:
-      "Fast iteration without breaking trust. We ship, learn, and harden — so owners stay online while we improve.",
+      "Fast iteration without breaking trust. We ship, learn, and harden, so owners stay online while we improve.",
   },
 ] as const;
 
@@ -32,25 +32,25 @@ export const mission = {
   eyebrow: "Our mission",
   headlinePrimary: "Empower",
   headlineSecondary: "small businesses to grow.",
-  body: "We build digital systems that create leverage — presence, products, automation, analytics, and AI designed so owners can move faster with clarity.",
+  body: "We build digital systems that create leverage, presence, products, automation, analytics, and AI designed so owners can move faster with clarity.",
 } as const;
 
 export const aboutIntro = {
   established: "EST. 2023",
   headline: "Digital systems that help small businesses grow.",
-  body: "Canopux is a digital engineering firm. We help small businesses launch stronger digital presence, ship custom apps, measure growth, and automate operations — without drowning owners in technical jargon.",
+  body: "Canopux is a digital engineering firm. We help small businesses launch stronger digital presence, ship custom apps, measure growth, and automate operations, without drowning owners in technical jargon.",
 } as const;
 
 export const aboutHighlights = [
   {
     title: "Products",
-    summary: "Ready-to-deploy systems for education, retail, CRM, and verification.",
+    summary: "Ready-to-deploy systems for education and vehicle verification.",
     href: "/products",
     cta: "Explore products",
   },
   {
     title: "Services",
-    summary: "Branding, web, apps, security, automation, growth, and AI — by category.",
+    summary: "Branding, web, apps, security, automation, growth, and AI, by category.",
     href: "/services",
     cta: "View services",
   },
@@ -77,46 +77,46 @@ export const milestones: Milestone[] = [
   },
   {
     date: "2024",
-    title: "Product packages take shape",
-    summary:
-      "Student Management System, Auto Check, retail hub, and CRM matured into ready-to-deploy offerings.",
-  },
-  {
-    date: "2025",
     title: "Broader delivery stack",
     summary:
       "Expanded across branding, full-stack apps, analytics, automation, and practical AI integrations.",
   },
   {
-    date: "2026",
-    title: "Systems for growing teams",
+    date: "2025",
+    title: "Student Management System",
     summary:
-      "Focused on clearer packages and outcomes — so owners can choose a path and ship with confidence.",
+      "Developed and launched SMS as a ready-to-deploy education platform for institutes.",
+  },
+  {
+    date: "2026",
+    title: "Auto Check and services",
+    summary:
+      "Building Auto Check for vehicle verification, still actively developing it, while continuing to deliver our full range of services for growing businesses.",
   },
 ];
 
 export const teamCapabilities: TeamCapability[] = [
   {
     area: "Full Stack",
-    capacity: "8 Devs",
+    capacity: "5 Devs",
     description:
       "End-to-end product engineering for websites, portals, and customer-facing apps.",
   },
   {
     area: "AI / ML",
-    capacity: "5 Engineers",
+    capacity: "3 Engineers",
     description:
       "Practical AI integrations and custom models that fit real business workflows.",
   },
   {
     area: "App Developers",
-    capacity: "6 Devs",
+    capacity: "2 Devs",
     description:
       "Cross-platform mobile experiences that keep customers engaged.",
   },
   {
     area: "Cloud / DevOps",
-    capacity: "4 Engineers",
+    capacity: "3 Engineers",
     description:
       "Deployment, domains, and infrastructure that stay stable as you grow.",
   },

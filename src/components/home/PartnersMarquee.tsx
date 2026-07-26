@@ -120,7 +120,7 @@ export function PartnersMarquee() {
   const nudge = (direction: "left" | "right") => {
     const wrap = trackRef.current?.parentElement;
     if (!wrap) return;
-    const step = Math.max(wrap.clientWidth * 0.7, 280);
+    const step = Math.max(wrap.clientWidth * 0.8, 140);
     animatingRef.current = true;
     offsetRef.current += direction === "left" ? step : -step;
     normalize();
@@ -149,7 +149,7 @@ export function PartnersMarquee() {
       </div>
 
       <div
-        className="relative z-[2] flex items-center gap-2 px-3 sm:gap-4 sm:px-6"
+        className="relative z-[2] flex items-center gap-0 px-0 sm:gap-4 sm:px-6"
         onMouseEnter={() => {
           pausedRef.current = true;
         }}
@@ -159,7 +159,7 @@ export function PartnersMarquee() {
       >
         <button
           type="button"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-canopux-black/10 bg-canopux-white text-canopux-black/50 shadow-[0_2px_8px_rgba(0,0,0,0.06),0_4px_16px_rgba(0,0,0,0.04)] transition hover:border-canopux-black/20 hover:text-canopux-black sm:h-12 sm:w-12"
+          className="absolute left-2 z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-canopux-black/10 bg-canopux-white/95 text-canopux-black/50 shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition hover:border-canopux-black/20 hover:text-canopux-black sm:static sm:h-12 sm:w-12 sm:bg-canopux-white sm:shadow-[0_2px_8px_rgba(0,0,0,0.06),0_4px_16px_rgba(0,0,0,0.04)]"
           onClick={() => nudge("left")}
           aria-label="View previous partners"
         >
@@ -167,7 +167,7 @@ export function PartnersMarquee() {
         </button>
 
         <div
-          className="min-w-0 flex-1 overflow-hidden"
+          className="min-w-0 flex-1 overflow-hidden px-1 sm:px-0"
           style={{
             maskImage: "var(--mq-fade)",
             WebkitMaskImage: "var(--mq-fade)",
@@ -184,14 +184,14 @@ export function PartnersMarquee() {
                   alt={partner.alt}
                   loading="lazy"
                   draggable={false}
-                  className="pointer-events-none block h-[72px] w-auto max-w-[160px] select-none object-contain sm:h-[100px] sm:max-w-[220px]"
+                  className="pointer-events-none block h-14 w-auto max-w-[120px] select-none object-contain sm:h-[100px] sm:max-w-[220px]"
                 />
               );
 
               return (
                 <figure
                   key={`${partner.name}-${index}`}
-                  className="mx-2 flex shrink-0 cursor-pointer items-center justify-center rounded-2xl border border-canopux-black/[0.08] bg-canopux-white px-9 py-[18px] transition duration-300 hover:-translate-y-0.5 hover:border-canopux-black/15 sm:mx-2.5 sm:rounded-[20px] sm:px-14 sm:py-6"
+                  className="mx-1.5 flex shrink-0 cursor-pointer items-center justify-center rounded-2xl border border-canopux-black/[0.08] bg-canopux-white px-5 py-3 transition duration-300 hover:-translate-y-0.5 hover:border-canopux-black/15 sm:mx-2.5 sm:rounded-[20px] sm:px-14 sm:py-6"
                   aria-hidden={index >= partners.length}
                 >
                   {partner.url ? (
@@ -216,7 +216,7 @@ export function PartnersMarquee() {
 
         <button
           type="button"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-canopux-black/10 bg-canopux-white text-canopux-black/50 shadow-[0_2px_8px_rgba(0,0,0,0.06),0_4px_16px_rgba(0,0,0,0.04)] transition hover:border-canopux-black/20 hover:text-canopux-black sm:h-12 sm:w-12"
+          className="absolute right-2 z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-canopux-black/10 bg-canopux-white/95 text-canopux-black/50 shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition hover:border-canopux-black/20 hover:text-canopux-black sm:static sm:h-12 sm:w-12 sm:bg-canopux-white sm:shadow-[0_2px_8px_rgba(0,0,0,0.06),0_4px_16px_rgba(0,0,0,0.04)]"
           onClick={() => nudge("right")}
           aria-label="View next partners"
         >

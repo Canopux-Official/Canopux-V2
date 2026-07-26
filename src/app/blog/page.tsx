@@ -10,7 +10,7 @@ type BlogIndexProps = {
 };
 
 export const metadata = buildMetadata({
-  title: "Blog — Web, App & AI Delivery Notes",
+  title: "Blog, Web, App & AI Delivery Notes",
   description:
     "Practical articles from Canopux on maintainable web stacks, AI feature adoption, and cloud foundations for growing product teams.",
   path: "/blog",
@@ -42,8 +42,9 @@ export default function BlogIndexPage({ searchParams }: BlogIndexProps) {
           overlay="heavy"
           tone="dark"
         >
-          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
-            <h1 className="max-w-2xl">
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-24 sm:pb-20 sm:pt-28">
+            <p className="eyebrow">Our blog</p>
+            <h1 className="mt-5 max-w-2xl">
               <span className="block font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
                 Insights
               </span>
@@ -56,7 +57,7 @@ export default function BlogIndexPage({ searchParams }: BlogIndexProps) {
       </section>
 
       <section className="surface-light">
-        <div className="container-page pb-16 pt-[18vh] sm:pb-24">
+        <div className="container-page pb-16 pt-12 sm:pb-24 sm:pt-16 lg:pt-[18vh]">
           <div className="divide-y divide-canopux-black/10 border-y border-canopux-black/10">
             {posts.map((post) => (
               <article key={post.slug} className="py-10 sm:py-12">
@@ -97,7 +98,7 @@ export default function BlogIndexPage({ searchParams }: BlogIndexProps) {
           {totalPages > 1 && (
             <nav
               aria-label="Blog pagination"
-              className="mt-14 flex items-center justify-center gap-4"
+              className="mt-14 flex flex-wrap items-center justify-center gap-3"
             >
               <Button
                 href={currentPage > 1 ? `/blog?page=${currentPage - 1}` : "/blog"}

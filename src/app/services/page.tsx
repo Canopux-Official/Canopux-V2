@@ -13,7 +13,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Services — Branding, Web, Apps, Automation & AI",
+  title: "Services, Branding, Web, Apps, Automation & AI",
   description:
     "Canopux services for small businesses: branding and design, web and mobile development, backend security, integrations, marketing analytics, and AI solutions.",
   path: "/services",
@@ -54,8 +54,9 @@ export default function ServicesPage() {
           overlay="heavy"
           tone="dark"
         >
-          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
-            <h1 className="max-w-2xl">
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-24 sm:pb-20 sm:pt-28">
+            <p className="eyebrow">Our services</p>
+            <h1 className="mt-5 max-w-2xl">
               <span className="block font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
                 Services
               </span>
@@ -75,14 +76,14 @@ export default function ServicesPage() {
         </MediaBleed>
       </section>
 
-      <section className="bg-canopux-black pb-24 pt-[18vh] sm:pb-32">
+      <section className="bg-canopux-black pb-24 pt-12 sm:pb-32 sm:pt-16 lg:pt-[18vh]">
         <div className="container-page">
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
             {serviceCategories.map((category) => (
               <SectionReveal key={category.id}>
                 <article
                   id={category.id}
-                  className="scroll-mt-28 flex h-full min-h-[22rem] flex-col rounded-3xl bg-[#171717] p-7 sm:min-h-[24rem] sm:p-8"
+                  className="scroll-mt-28 flex h-full min-h-[22rem] flex-col rounded-3xl bg-[#171717] p-6 sm:min-h-[24rem] sm:p-8"
                 >
                   <h2 className="font-display text-xl font-semibold tracking-[-0.03em] text-canopux-white sm:text-2xl">
                     {category.title}

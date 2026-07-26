@@ -14,9 +14,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { pillars, siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Canopux — Digital Solutions for Small Businesses",
+  title: "Canopux, Digital Solutions for Small Businesses",
   description:
-    "Empowering small businesses with scalable digital solutions and intelligent automation — branding, web and mobile apps, analytics, and AI.",
+    "Empowering small businesses with scalable digital solutions and intelligent automation, branding, web and mobile apps, analytics, and AI.",
   path: "/",
   absoluteTitle: true,
   keywords: [
@@ -49,7 +49,7 @@ export default function HomePage() {
           showPlaceholderBadge={false}
         >
           <div className="relative min-h-[100svh]">
-            <div className="container-page flex min-h-[100svh] flex-col justify-center pb-24 pt-28 sm:pb-32">
+            <div className="container-page flex min-h-[100svh] flex-col justify-center pb-24 pt-24 sm:pb-32 sm:pt-28">
               <div className="w-full max-w-2xl animate-fade-rise">
                 <h1>
                   <span className="block font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-canopux-white sm:text-5xl lg:text-6xl">
@@ -71,7 +71,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <LiveTime className="absolute bottom-8 right-5 z-20 sm:bottom-10 sm:right-8 lg:bottom-12 lg:right-10" />
+            <LiveTime className="absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-20 max-[420px]:text-[10px] sm:bottom-10 sm:right-8 lg:bottom-12 lg:right-10" />
           </div>
         </MediaBleed>
       </section>
@@ -79,20 +79,20 @@ export default function HomePage() {
       <PartnersMarquee />
 
       <section className="surface-light">
-        <div className="container-page pt-14 pb-10 sm:pt-16 sm:pb-12">
+        <div className="container-page pt-16 pb-10 sm:pt-20 sm:pb-12">
           <SectionReveal>
             <p className="eyebrow">Core pillars</p>
-            <h2 className="section-title mt-4 max-w-2xl">
+            <h2 className="section-title mt-3 max-w-2xl sm:mt-4">
               <span className="block">Four ways we help</span>
               <span className="block">small businesses grow.</span>
             </h2>
             <p className="section-lead">
-              We group a broad capability set into clear outcomes — so you can
+              We group a broad capability set into clear outcomes, so you can
               choose the path that matches where your business is today.
             </p>
           </SectionReveal>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-5 sm:mt-16 sm:gap-6 md:grid-cols-2">
             {pillars.map((pillar, index) => (
               <SectionReveal key={pillar.id}>
                 <Link
@@ -107,13 +107,13 @@ export default function HomePage() {
                     overlay="medium"
                     kenBurns={index === 0}
                     showPlaceholderBadge={false}
-                    className="min-h-[14rem]"
+                    className="!min-h-[11rem] sm:!min-h-[14rem]"
                   />
-                  <div className="bg-canopux-white px-6 py-7">
+                  <div className="bg-canopux-white px-5 py-6 sm:px-6 sm:py-7">
                     <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-canopux-black/45">
                       0{index + 1} / 04
                     </p>
-                    <h3 className="mt-3 font-display text-2xl font-semibold tracking-[-0.03em] text-canopux-black">
+                    <h3 className="mt-3 font-display text-xl font-semibold tracking-[-0.03em] text-canopux-black sm:text-2xl">
                       {pillar.title}
                     </h3>
                     <p className="mt-3 text-body text-canopux-black/65">
@@ -128,45 +128,45 @@ export default function HomePage() {
         <SectionDivider tone="light" />
       </section>
 
-      <section className="bg-canopux-black">
+      <section className="relative bg-canopux-black">
         <MediaBleed
           label="ready-to-deploy products"
-          alt="Students collaborating — Student Management System"
+          alt="Students collaborating, Student Management System"
           src={featuredProduct.image}
           aspect="tall"
           overlay="heavy"
           showPlaceholderBadge={false}
           className="!h-auto !min-h-[85svh]"
         >
-          <div className="container-page pt-24 pb-10 sm:pt-32 sm:pb-12">
+          <div className="container-page pt-32 pb-12 sm:pt-36 sm:pb-14">
             <SectionReveal>
               <p className="eyebrow">Products</p>
-              <h2 className="section-title mt-4 max-w-xl">
+              <h2 className="section-title mt-3 max-w-xl sm:mt-4">
                 <span className="block">Ready-to-deploy</span>
                 <span className="block">systems, not blank pages.</span>
               </h2>
-              <p className="section-lead">
+              <p className="section-lead max-w-[36ch] sm:max-w-measure">
                 Prefer a proven package over starting from scratch? Explore
                 white-label and ready-to-deploy products built for institutes,
                 retailers, and operators.
               </p>
-              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-2">
                 {products.map((product) => (
                   <Link
                     key={product.slug}
                     href={`/products#${product.slug}`}
-                    className="border border-canopux-line bg-canopux-black/40 p-5 transition-opacity hover:opacity-80"
+                    className="border border-canopux-line bg-canopux-black/40 p-4 transition-opacity hover:opacity-80 sm:p-5"
                   >
-                    <h3 className="font-display text-lg font-semibold tracking-[-0.02em]">
+                    <h3 className="font-display text-base font-semibold tracking-[-0.02em] sm:text-lg">
                       {product.title}
                     </h3>
-                    <p className="mt-3 text-body-sm text-canopux-silver">
+                    <p className="mt-2 text-body-sm text-canopux-silver sm:mt-3">
                       {product.tagline}
                     </p>
                   </Link>
                 ))}
               </div>
-              <Button href="/products" className="mt-10">
+              <Button href="/products" className="mt-8 w-full sm:mt-10 sm:w-auto">
                 View all products
               </Button>
             </SectionReveal>
@@ -233,7 +233,7 @@ export default function HomePage() {
           </div>
 
           <p className="mx-auto mt-10 max-w-2xl text-center text-body-sm text-canopux-silver">
-            Packages can be combined or tailored — from a single landing page to
+            Packages can be combined or tailored, from a single landing page to
             full operations systems.{" "}
             <Link
               href="/services"
@@ -247,26 +247,26 @@ export default function HomePage() {
       </section>
 
       <section className="surface-light">
-        <div className="container-page pt-24 pb-10 sm:pt-32 sm:pb-12">
+        <div className="container-page pt-32 pb-10 sm:pt-36 sm:pb-12">
           <SectionReveal>
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-6">
               <div>
                 <p className="eyebrow">Selected work</p>
-                <h2 className="section-title mt-4">
+                <h2 className="section-title mt-3 sm:mt-4">
                   <span className="block">Work that</span>
                   <span className="block">speaks for itself.</span>
                 </h2>
               </div>
               <Link
                 href="/portfolio"
-                className="font-mono text-[11px] uppercase tracking-[0.2em] text-canopux-signal underline-offset-4 hover:underline"
+                className="inline-flex min-h-11 items-center font-mono text-[11px] uppercase tracking-[0.2em] text-canopux-signal underline-offset-4 hover:underline"
               >
                 Browse portfolio
               </Link>
             </div>
           </SectionReveal>
 
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">
+          <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:gap-6">
             {featuredWork.map((study) => (
               <SectionReveal key={study.slug}>
                 <Link
@@ -284,13 +284,13 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#171717] via-black/10 to-transparent" />
                   </div>
 
-                  <div className="flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-5">
-                    <div className="min-w-0">
-                      <p className="truncate font-sans text-[15px] text-canopux-silver">
+                  <div className="flex items-center justify-between gap-3 px-5 py-4 sm:gap-4 sm:px-6 sm:py-5">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate font-sans text-[14px] text-canopux-silver sm:text-[15px]">
                         {study.title}
                       </p>
                     </div>
-                    <span className="shrink-0 text-[15px] text-canopux-silver transition-colors group-hover:text-canopux-white">
+                    <span className="inline-flex min-h-11 shrink-0 items-center pl-1 text-[14px] text-canopux-silver transition-colors group-hover:text-canopux-white sm:text-[15px]">
                       Explore
                       <span aria-hidden className="ml-1">
                         →
@@ -311,12 +311,12 @@ export default function HomePage() {
             <figure className="mx-auto max-w-3xl text-center">
               <blockquote>
                 <p className="font-display text-3xl font-semibold leading-[1.15] tracking-[-0.035em] text-canopux-white sm:text-4xl lg:text-5xl">
-                  Technology should amplify the people running the business
-                  — not bury them in complexity.
+                  Technology should amplify the people running the business,
+                  not bury them in complexity.
                 </p>
               </blockquote>
               <figcaption className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] text-canopux-silver">
-                — Canopux
+                Canopux
               </figcaption>
             </figure>
           </SectionReveal>

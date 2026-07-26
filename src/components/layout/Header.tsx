@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { siteConfig } from "@/lib/site";
 
@@ -72,7 +72,7 @@ function MenuButton({
   return (
     <button
       type="button"
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-canopux-white transition-colors hover:bg-white/10"
+      className="inline-flex h-11 w-11 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border border-white/25 text-canopux-white transition-colors hover:bg-white/10"
       aria-expanded={open}
       aria-controls={controls}
       aria-label={open ? "Close menu" : "Open menu"}
@@ -114,27 +114,47 @@ export function Header() {
 
   useEffect(() => {
     if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previous;
+      window.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
   const closeMenu = () => setOpen(false);
+  const topHeaderRef = useRef<HTMLElement>(null);
+  const floatingHeaderRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const top = topHeaderRef.current;
+    const floating = floatingHeaderRef.current;
+    if (top) {
+      if (scrolled) top.setAttribute("inert", "");
+      else top.removeAttribute("inert");
+    }
+    if (floating) {
+      if (!scrolled) floating.setAttribute("inert", "");
+      else floating.removeAttribute("inert");
+    }
+  }, [scrolled]);
 
   return (
     <>
-      {/* Hero / top-of-page nav — transparent; pages live in a right-side panel */}
+      {/* Hero / top-of-page nav, transparent; pages live in a right-side panel */}
       <header
-        inert={scrolled ? true : undefined}
+        ref={topHeaderRef}
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
             ? "pointer-events-none -translate-y-2 opacity-0"
             : "pointer-events-auto translate-y-0 opacity-100"
         }`}
       >
-        <div className="relative mx-auto flex h-14 max-w-[90rem] items-center justify-between gap-4 px-5 mt-5 sm:mt-7 sm:h-16 sm:px-8 lg:mt-8 lg:px-10">
+        <div className="relative mx-auto flex h-14 max-w-[90rem] items-center justify-between gap-4 px-5 mt-[max(0.75rem,env(safe-area-inset-top))] sm:mt-[max(1.75rem,env(safe-area-inset-top))] sm:h-16 sm:px-8 lg:mt-[max(2rem,env(safe-area-inset-top))] lg:px-10">
           <Logo variant="dark" priority className="shrink-0" />
 
           <div className="relative flex shrink-0 items-center gap-3 sm:gap-4">
@@ -179,9 +199,9 @@ export function Header() {
         </div>
       </header>
 
-      {/* Floating glass island — appears after scroll */}
+      {/* Floating glass island, appears after scroll */}
       <header
-        inert={!scrolled ? true : undefined}
+        ref={floatingHeaderRef}
         className={`pointer-events-none fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
             ? "translate-y-0 opacity-100"
@@ -189,9 +209,9 @@ export function Header() {
         }`}
         aria-hidden={!scrolled}
       >
-        <div className="pointer-events-auto mx-auto w-[min(100%-1.5rem,56rem)] pt-3 sm:w-[min(100%-2rem,60rem)] sm:pt-4 lg:w-[min(100%-3rem,64rem)]">
-          <div className="overflow-hidden rounded-xl border border-white/10 bg-[#1a1a1a]/70 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-            <div className="flex h-12 items-center justify-between gap-3 px-3 sm:h-[3.25rem] sm:px-4">
+        <div className="pointer-events-auto mx-auto w-full max-w-[56rem] px-4 pt-[max(1rem,calc(env(safe-area-inset-top)+0.35rem))] sm:max-w-[60rem] sm:px-5 sm:pt-[max(1.25rem,calc(env(safe-area-inset-top)+0.5rem))] lg:max-w-[64rem] lg:px-6">
+          <div className="rounded-xl border border-white/10 bg-[#1a1a1a]/90 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+            <div className="flex h-14 items-center justify-between gap-3 px-3.5 sm:h-[3.5rem] sm:px-4">
               <Logo variant="dark" className="shrink-0" />
 
               <nav
@@ -210,7 +230,7 @@ export function Header() {
                   tabIndex={scrolled ? 0 : -1}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hidden rounded-md bg-canopux-white px-3.5 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-canopux-black transition-opacity hover:opacity-90 sm:inline-flex"
+                  className="hidden min-h-10 items-center rounded-md bg-canopux-white px-3.5 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-canopux-black transition-opacity hover:opacity-90 sm:inline-flex"
                 >
                   Let&apos;s build
                 </a>
@@ -226,7 +246,7 @@ export function Header() {
 
             <div
               id="float-mobile-nav"
-              className={`border-t border-white/10 lg:hidden ${
+              className={`overflow-hidden rounded-b-xl border-t border-white/10 lg:hidden ${
                 open && scrolled ? "block" : "hidden"
               }`}
             >

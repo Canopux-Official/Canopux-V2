@@ -47,7 +47,7 @@ export function buildMetadata({
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: `${siteConfig.name} — ${title}`,
+          alt: `${siteConfig.name}, ${title}`,
         },
       ],
     },

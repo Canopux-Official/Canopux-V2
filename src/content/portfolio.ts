@@ -14,7 +14,7 @@ export type CaseStudy = {
 };
 
 /**
- * Selected work — client sites and platforms.
+ * Selected work, client sites and platforms.
  * Live details sourced from canopux.org and each public site.
  */
 export const caseStudies: CaseStudy[] = [
@@ -23,7 +23,7 @@ export const caseStudies: CaseStudy[] = [
     title: "JJ Institute of Science",
     tagline: "In the pursuit of excellence",
     summary:
-      "JJ Institute of Science runs on Canopux’s Student Management System — a full education platform for admissions, sessions, student records, and day-to-day institute operations under their “In the Pursuit of Excellence” brand.",
+      "JJ Institute of Science runs on Canopux’s Student Management System, a full education platform for admissions, sessions, student records, and day-to-day institute operations under their “In the Pursuit of Excellence” brand.",
     industry: "Education & Management",
     services: ["Student Management System", "Web & Mobile Development"],
     stack: [
@@ -47,7 +47,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Priyaanshii Tasteworks Pvt. Ltd.",
     tagline: "One passion. Many experiences. For great food.",
     summary:
-      "Brand and web presence for an all-India hospitality group spanning Sukoon Tea Point, Apna Adda family dining, and Priyaanshii Caters & Event Management — weddings, corporate events, and dining under one kitchen philosophy.",
+      "Brand and web presence for an all-India hospitality group spanning Sukoon Tea Point, Apna Adda family dining, and Priyaanshii Caters & Event Management, weddings, corporate events, and dining under one kitchen philosophy.",
     industry: "Hospitality & Events",
     services: ["Digital Presence & Branding", "Web Development"],
     stack: ["React", "Brand UI", "Content"],
@@ -64,7 +64,7 @@ export const caseStudies: CaseStudy[] = [
     title: "IndoCrypt 2025",
     tagline: "India’s premier cryptography conference",
     summary:
-      "Conference web experience for IndoCrypt 2025 at IIIT Bhubaneswar (14–17 December 2025) — registrations, schedule, important dates, and organizer presence for India’s leading cryptography and information security gathering.",
+      "Conference web experience for IndoCrypt 2025 at IIIT Bhubaneswar (14–17 December 2025), registrations, schedule, important dates, and organizer presence for India’s leading cryptography and information security gathering.",
     industry: "Cybersecurity & Events",
     services: ["Digital Presence & Branding", "Web Development"],
     stack: ["React", "Vite", "JavaScript", "Framer Motion"],
@@ -81,7 +81,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Sri Jagannath Traders",
     tagline: "Strength that builds tomorrow",
     summary:
-      "Premium steel distributor site for Bhadrak, Odisha — product catalogue (stainless, GI/MS pipes, roofing, angles, channels), mill partners, industries served, and a clear enquiry-to-delivery path for builders and contractors.",
+      "Premium steel distributor site for Bhadrak, Odisha, product catalogue (stainless, GI/MS pipes, roofing, angles, channels), mill partners, industries served, and a clear enquiry-to-delivery path for builders and contractors.",
     industry: "Industrial & Distribution",
     services: ["Digital Presence & Branding", "Web Development"],
     stack: ["React", "Brand UI", "Content"],
@@ -98,7 +98,7 @@ export const caseStudies: CaseStudy[] = [
     title: "KKR Mahila Higher Secondary School",
     tagline: "Educating young women. Building stronger tomorrows.",
     summary:
-      "School website for a Government Higher Secondary School in Bhadrak (est. 1994) — story, academics (CHSE Arts), campus life, SAMS Odisha admissions guidance, gallery, and leadership messaging built around trust and clarity.",
+      "School website for a Government Higher Secondary School in Bhadrak (est. 1994), story, academics (CHSE Arts), campus life, SAMS Odisha admissions guidance, gallery, and leadership messaging built around trust and clarity.",
     industry: "Education",
     services: ["Digital Presence & Branding", "Web Development"],
     stack: ["React", "Brand UI", "Content"],
@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
     title: "AI ATS",
     tagline: "AI-powered resume screening and job matching",
     summary:
-      "Recruiters spend hours reviewing resumes while candidates rarely know why applications fail ATS filters. This platform uses AI to score resumes, rank candidates for posted jobs, and recommend roles — bridging both sides of hiring.",
+      "Recruiters spend hours reviewing resumes while candidates rarely know why applications fail ATS filters. This platform uses AI to score resumes, rank candidates for posted jobs, and recommend roles, bridging both sides of hiring.",
     industry: "AI & ML",
     services: ["AI Solutions", "Web & Backend Development"],
     stack: ["React", "Tailwind CSS", "NestJS", "PostgreSQL", "NLP", "Prisma"],
@@ -132,7 +132,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Math SuperHighway",
     tagline: "Excellence in mathematics",
     summary:
-      "Learning platform for structured maths programs — foundation through JEE and Olympiad prep — with courses, testimonials, enrolment, and a brand presence for a Bhubaneswar coaching institute known for conceptual clarity and results.",
+      "Learning platform for structured maths programs, foundation through JEE and Olympiad prep, with courses, testimonials, enrolment, and a brand presence for a Bhubaneswar coaching institute known for conceptual clarity and results.",
     industry: "EdTech & Coaching",
     services: ["Digital Presence & Branding", "Web Development"],
     stack: ["React", "Animations", "Brand UI"],
@@ -149,7 +149,7 @@ export const caseStudies: CaseStudy[] = [
     title: "New Darshan Jewellery",
     tagline: "Gold & silver jewellery for every celebration",
     summary:
-      "Premium jewellery brand website for New Darshan Jewellery in Ghasipura, Keonjhar — collections, celebrations, and store identity for gold and silver shoppers discovering the brand online.",
+      "Premium jewellery brand website for New Darshan Jewellery in Ghasipura, Keonjhar, collections, celebrations, and store identity for gold and silver shoppers discovering the brand online.",
     industry: "Retail & Jewellery",
     services: ["Digital Presence & Branding", "Web Development"],
     stack: ["React", "Brand UI", "Commerce"],
@@ -166,7 +166,7 @@ export const caseStudies: CaseStudy[] = [
 export const featuredProduct = {
   title: "Student Management System",
   summary:
-    "A live full-stack platform for coaching institutes — onboarding, tracking, roles, OTP signup, and PWA delivery included.",
+    "A live full-stack platform for coaching institutes, onboarding, tracking, roles, OTP signup, and PWA delivery included.",
   stack: ["React", "TypeScript", "Node.js", "MongoDB"],
   href: "/products#student-management-system",
   image:

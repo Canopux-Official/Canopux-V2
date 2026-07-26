@@ -18,7 +18,7 @@ export const serviceCategories: ServiceCategory[] = [
     id: "branding-digital-design",
     title: "Branding & Digital Design",
     intro:
-      "Build a cohesive look and feel across every customer touchpoint — from logo to social assets and print.",
+      "Build a cohesive look and feel across every customer touchpoint, from logo to social assets and print.",
     image:
       "https://images.unsplash.com/photo-1626785774573-4b7993143456?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "Creative branding workspace with color swatches",
@@ -39,7 +39,7 @@ export const serviceCategories: ServiceCategory[] = [
     id: "web-mobile-development",
     title: "Web & Mobile Development",
     intro:
-      "Ship customer-facing experiences that convert — websites, stores, apps, and the infrastructure behind them.",
+      "Ship customer-facing experiences that convert, websites, stores, apps, and the infrastructure behind them.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "Laptop showing a modern website analytics interface",
@@ -148,7 +148,7 @@ export const serviceCategories: ServiceCategory[] = [
     id: "artificial-intelligence",
     title: "Artificial Intelligence Solutions",
     intro:
-      "Add intelligent features that save time — from API-powered assistants to custom trained models.",
+      "Add intelligent features that save time, from API-powered assistants to custom trained models.",
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "Robot hand and human hand representing AI collaboration",
@@ -161,7 +161,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         title: "Custom AI Engineering",
         description:
-          "Training and fine-tuning machine learning models — feature matching, object detection, and industry-specific pipelines.",
+          "Training and fine-tuning machine learning models, feature matching, object detection, and industry-specific pipelines.",
       },
     ],
   },

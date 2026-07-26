@@ -88,10 +88,10 @@ export function Footer() {
             <MarkGlyph size={14} className="text-canopux-silver" />
             © {year} {siteConfig.legalName}. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-canopux-silver">
+          <div className="flex items-center gap-1 text-canopux-silver sm:gap-2">
             <a
               href={siteConfig.social.linkedin}
-              className="transition-colors hover:text-canopux-white"
+              className="inline-flex h-11 w-11 items-center justify-center transition-colors hover:text-canopux-white"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="LinkedIn"
@@ -108,7 +108,7 @@ export function Footer() {
             </a>
             <a
               href={siteConfig.social.twitter}
-              className="transition-colors hover:text-canopux-white"
+              className="inline-flex h-11 w-11 items-center justify-center transition-colors hover:text-canopux-white"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="X"
@@ -125,7 +125,7 @@ export function Footer() {
             </a>
             <a
               href={siteConfig.social.github}
-              className="transition-colors hover:text-canopux-white"
+              className="inline-flex h-11 w-11 items-center justify-center transition-colors hover:text-canopux-white"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="GitHub"
@@ -146,7 +146,7 @@ export function Footer() {
             </a>
             <a
               href={siteConfig.whatsappUrl}
-              className="transition-colors hover:text-canopux-white"
+              className="inline-flex h-11 w-11 items-center justify-center transition-colors hover:text-canopux-white"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="WhatsApp"

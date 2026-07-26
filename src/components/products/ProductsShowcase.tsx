@@ -155,10 +155,12 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
       };
     }
 
-    const targetWidth = Math.min(720, window.innerWidth * 0.92);
-    const targetHeight = Math.min(window.innerHeight * 0.86, 740);
+    const targetWidth = Math.min(720, window.innerWidth - 32);
+    const viewportHeight =
+      window.visualViewport?.height ?? window.innerHeight;
+    const targetHeight = Math.min(viewportHeight * 0.86, 740);
     const targetLeft = (window.innerWidth - targetWidth) / 2;
-    const targetTop = (window.innerHeight - targetHeight) / 2;
+    const targetTop = (viewportHeight - targetHeight) / 2;
 
     const scale = Math.max(
       origin.width / targetWidth,
@@ -187,7 +189,7 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
 
   return (
     <>
-      <div className="container-page pb-20 pt-[18vh] sm:pb-28">
+      <div className="container-page pb-20 pt-12 sm:pb-28 sm:pt-16 lg:pt-[18vh]">
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
           {products.map((product) => (
             <SectionReveal key={product.slug} className="h-full">
@@ -197,7 +199,7 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
                   if (node) cardRefs.current.set(product.slug, node);
                   else cardRefs.current.delete(product.slug);
                 }}
-                className="scroll-mt-28 flex h-full min-h-[17rem] flex-col justify-between rounded-2xl bg-[#171717] p-7 sm:min-h-[18.5rem] sm:p-8 lg:min-h-[20rem] lg:p-9"
+                className="scroll-mt-32 flex h-full min-h-[17rem] flex-col justify-between rounded-2xl bg-[#171717] p-6 sm:min-h-[18.5rem] sm:p-8 lg:min-h-[20rem] lg:p-9 lg:scroll-mt-28"
               >
                 <div>
                   <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-canopux-white sm:text-[1.65rem]">
@@ -211,7 +213,7 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
                 <button
                   type="button"
                   onClick={() => open(product.slug)}
-                  className="mt-8 inline-flex w-fit items-center gap-1.5 text-[15px] text-canopux-silver transition-colors hover:text-canopux-white"
+                  className="mt-8 inline-flex min-h-11 w-fit items-center gap-1.5 text-[15px] text-canopux-silver transition-colors hover:text-canopux-white"
                 >
                   Learn More
                   <span aria-hidden>→</span>
@@ -258,13 +260,13 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="pointer-events-none absolute inset-0 flex items-center justify-center p-4 sm:p-6"
+            className="pointer-events-none absolute inset-0 flex items-center justify-center p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:p-6"
           >
             <div
-              className="pointer-events-auto relative flex max-h-[86vh] w-full max-w-[45rem] origin-center flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#171717] shadow-[0_32px_96px_rgba(0,0,0,0.65)]"
+              className="pointer-events-auto relative flex max-h-[86dvh] w-full max-w-[45rem] origin-center flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#171717] shadow-[0_32px_96px_rgba(0,0,0,0.65)] sm:max-h-[86vh]"
               style={overlayStyle}
             >
-              <div className="relative h-40 shrink-0 overflow-hidden sm:h-48">
+              <div className="relative h-36 shrink-0 overflow-hidden sm:h-48">
                 <Image
                   src={active.image}
                   alt={active.imageAlt}
@@ -277,7 +279,7 @@ export function ProductsShowcase({ products }: ProductsShowcaseProps) {
                 <button
                   type="button"
                   onClick={close}
-                  className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/50 text-canopux-white backdrop-blur-sm transition-colors hover:bg-black/70"
+                  className="absolute right-3 top-3 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/50 text-canopux-white backdrop-blur-sm transition-colors hover:bg-black/70 sm:right-4 sm:top-4"
                   aria-label="Close"
                 >
                   <span aria-hidden className="text-lg leading-none">

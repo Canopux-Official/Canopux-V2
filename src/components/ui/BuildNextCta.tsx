@@ -31,11 +31,11 @@ export function BuildNextCta({
               </p>
             </div>
 
-            <div className="flex shrink-0 flex-wrap gap-3">
+            <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
               <Button
                 href={primaryHref}
                 external={primaryExternal || undefined}
-                className="rounded-full"
+                className="w-full rounded-full sm:w-auto"
               >
                 {primaryLabel}
                 <span aria-hidden>→</span>
@@ -43,7 +43,7 @@ export function BuildNextCta({
               <Button
                 href={secondaryHref}
                 variant="secondary"
-                className="rounded-full"
+                className="w-full rounded-full sm:w-auto"
               >
                 {secondaryLabel}
               </Button>

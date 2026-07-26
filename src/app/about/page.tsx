@@ -14,7 +14,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "About Canopux — Digital Partners for Small Business",
+  title: "About Canopux, Digital Partners for Small Business",
   description:
     "Canopux helps small businesses grow with digital presence, custom apps, analytics, automation, and AI. Founded in 2023 and headquartered in Bhubaneswar, India.",
   path: "/about",
@@ -46,7 +46,7 @@ export default function AboutPage() {
         ])}
       />
 
-      {/* Mission hero — leave space for page hero image */}
+      {/* Mission hero, leave space for page hero image */}
       <section>
         <MediaBleed
           label="about hero"
@@ -56,7 +56,7 @@ export default function AboutPage() {
           overlay="heavy"
           tone="dark"
         >
-          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-20 pt-28">
+          <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-24 sm:pb-20 sm:pt-28">
             <p className="eyebrow">{mission.eyebrow}</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
               <span className="block text-canopux-white">
@@ -73,8 +73,8 @@ export default function AboutPage() {
         </MediaBleed>
       </section>
 
-      {/* Highlight cards — x.ai company style */}
-      <section className="bg-canopux-black pb-16 pt-[18vh] sm:pb-20">
+      {/* Highlight cards, x.ai company style */}
+      <section className="bg-canopux-black pb-16 pt-12 sm:pb-20 sm:pt-16 lg:pt-[18vh]">
         <div className="container-page">
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
             {aboutHighlights.map((item) => {
@@ -160,7 +160,7 @@ export default function AboutPage() {
               <span className="block">Built for collaboration.</span>
             </h2>
             <p className="mt-5 max-w-lg text-body leading-relaxed text-canopux-silver">
-              We work closely with founders and operators — prioritizing clear
+              We work closely with founders and operators, prioritizing clear
               communication and fast feedback loops on every project.
             </p>
           </SectionReveal>
@@ -254,7 +254,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Latest news — single row like x.ai company */}
+      {/* Latest news, single row like x.ai company */}
       <section className="border-t border-canopux-line bg-canopux-black py-24 sm:py-32">
         <div className="container-page">
           <SectionReveal>
