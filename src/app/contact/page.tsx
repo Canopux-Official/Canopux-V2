@@ -84,7 +84,7 @@ export default function ContactPage() {
           kenBurns
           overlay="heavy"
           tone="dark"
-          src='/bg-image/contact.png'
+          src="/bg-image/contact-comp.avif"
         >
           <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-28 sm:pb-20 sm:pt-28">
             <p className="eyebrow">Contact</p>

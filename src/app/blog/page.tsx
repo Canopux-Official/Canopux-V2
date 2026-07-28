@@ -71,7 +71,7 @@ export default function BlogIndexPage({ searchParams }: BlogIndexProps) {
           kenBurns
           overlay="heavy"
           tone="dark"
-          src='/bg-image/blog.png'
+          src="/bg-image/blog-comp.avif"
         >
           <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-24 sm:pb-20 sm:pt-28">
             <p className="eyebrow">Our blog</p>

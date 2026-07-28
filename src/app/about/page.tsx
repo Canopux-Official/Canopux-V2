@@ -57,7 +57,7 @@ export default function AboutPage() {
           kenBurns
           overlay="heavy"
           tone="dark"
-          src='/bg-image/about.png'
+          src="/bg-image/about-comp.avif"
         >
           <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-24 sm:pb-20 sm:pt-28">
             <p className="eyebrow">{mission.eyebrow}</p>
