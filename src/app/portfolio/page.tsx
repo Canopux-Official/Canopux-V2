@@ -41,7 +41,7 @@ export default function PortfolioPage() {
           kenBurns
           overlay="heavy"
           tone="dark"
-          src='/bg-image/work.png'
+          src='/bg-image/work comp.avif'
         >
           <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-28 sm:pb-20 sm:pt-28">
             <p className="eyebrow">Our work</p>

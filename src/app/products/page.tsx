@@ -37,6 +37,7 @@ export default function ProductsPage() {
           kenBurns
           overlay="heavy"
           tone="dark"
+          src='/bg-image/products comp.avif'
         >
           <div className="container-page flex min-h-[100svh] flex-col justify-center pb-16 pt-28 sm:pb-20 sm:pt-28">
             <p className="eyebrow">Our products</p>

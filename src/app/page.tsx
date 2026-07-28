@@ -305,8 +305,12 @@ export default function HomePage() {
         <SectionDivider tone="light" />
       </section>
 
-      <section className="bg-canopux-black">
-        <div className="container-page py-20 sm:py-32 lg:py-36">
+      <section
+        className="relative bg-canopux-black bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/bg-image/quote comp.avif')" }}
+      >
+        <div className="absolute inset-0 bg-canopux-black/70" />
+        <div className="container-page py-20 sm:py-32 lg:py-36 relative z-10">
           <SectionReveal>
             <figure className="mx-auto max-w-3xl text-center">
               <blockquote>
