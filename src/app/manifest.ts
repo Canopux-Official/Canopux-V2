@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Canopux",
+    name: siteConfig.title,
     short_name: "Canopux",
     description: siteConfig.description,
     start_url: "/",
@@ -15,9 +15,9 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["business", "productivity"],
     icons: [
       {
-        src: "/icons/favicon.svg",
-        sizes: "any",
-        type: "image/svg+xml",
+        src: "/icons/favicon-32.png",
+        sizes: "32x32",
+        type: "image/png",
         purpose: "any",
       },
       {

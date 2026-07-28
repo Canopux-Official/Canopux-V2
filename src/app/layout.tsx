@@ -33,8 +33,8 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name}, Digital Solutions for Small Businesses`,
-    template: `%s · ${siteConfig.name}`,
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     alternateLocale: [...siteConfig.alternateLocales],
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name}, Digital Solutions for Small Businesses`,
+    title: siteConfig.title,
     description: siteConfig.description,
     images: [
       {
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name}, Digital Solutions for Small Businesses`,
+    title: siteConfig.title,
     description: siteConfig.description,
     images: ["/og-default.png"],
     site: siteConfig.social.twitterHandle,
@@ -95,11 +95,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icons/favicon.svg", type: "image/svg+xml" },
+      { url: "/icons/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/icons/favicon.png", type: "image/png" },
       { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
       { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: "/icons/favicon-32.png",
+    apple: [
+      { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   manifest: "/manifest.webmanifest",
   category: "technology",

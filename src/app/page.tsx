@@ -14,7 +14,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { pillars, siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Canopux, Digital Solutions for Small Businesses",
+  title: siteConfig.title,
   description:
     "Empowering small businesses with scalable digital solutions and intelligent automation, branding, web and mobile apps, analytics, and AI.",
   path: "/",

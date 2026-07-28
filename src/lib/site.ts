@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Canopux",
+  title: "Canopux | AI, Web & App Development Company",
   legalName: "Canopux Inc.",
   url: "https://www.canopux.org",
   description:
