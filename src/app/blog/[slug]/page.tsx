@@ -5,7 +5,7 @@ import {
   articleJsonLd,
   breadcrumbJsonLd,
 } from "@/components/seo/JsonLd";
-import { getAllPosts, getPostBySlug } from "@/content/blog";
+import { getAllPosts, getPostBySlug, getPostPlainText } from "@/content/blog";
 import { absoluteUrl, buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
@@ -57,7 +57,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const shareUrl = absoluteUrl(`/blog/${post.slug}`);
   const shareText = encodeURIComponent(post.title);
   const encodedUrl = encodeURIComponent(shareUrl);
-  const wordCount = post.content.join(" ").split(/\s+/).filter(Boolean).length;
+  const wordCount = getPostPlainText(post.content)
+    .split(/\s+/)
+    .filter(Boolean).length;
   const publishedIso = `${post.publishedAt}T00:00:00+05:30`;
   const modifiedIso = `${post.updatedAt ?? post.publishedAt}T00:00:00+05:30`;
 
@@ -154,14 +156,49 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </header>
 
           <div className="mt-12 max-w-3xl space-y-6" itemProp="articleBody">
-            {post.content.map((paragraph) => (
-              <p
-                key={paragraph.slice(0, 32)}
-                className="text-body leading-relaxed text-canopux-black/70 sm:text-[1.0625rem]"
-              >
-                {paragraph}
-              </p>
-            ))}
+            {post.content.map((block, index) => {
+              if (typeof block === "string") {
+                return (
+                  <p
+                    key={`p-${index}-${block.slice(0, 24)}`}
+                    className="text-body leading-relaxed text-canopux-black/70 sm:text-[1.0625rem]"
+                  >
+                    {block}
+                  </p>
+                );
+              }
+
+              if ("heading" in block) {
+                return (
+                  <h2
+                    key={`h-${index}-${block.heading}`}
+                    className="!mt-12 font-display text-2xl font-semibold tracking-[-0.03em] text-canopux-black first:!mt-0 sm:text-3xl"
+                  >
+                    {block.heading}
+                  </h2>
+                );
+              }
+
+              return (
+                <ul
+                  key={`l-${index}-${block.list[0]?.slice(0, 16) ?? index}`}
+                  className="space-y-2.5 pl-1"
+                >
+                  {block.list.map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-3 text-body leading-relaxed text-canopux-black/70 sm:text-[1.0625rem]"
+                    >
+                      <span
+                        className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-canopux-black/40"
+                        aria-hidden
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              );
+            })}
           </div>
 
           <footer className="mt-16 max-w-3xl border-t border-canopux-black/10 pt-10 pb-20">

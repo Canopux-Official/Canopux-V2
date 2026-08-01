@@ -20,12 +20,6 @@ export const partners: Partner[] = [
     url: "https://www.ingarss-2025.in/",
   },
   {
-    name: "IIIT Bhubaneswar",
-    alt: "IIIT Bhubaneswar partner logo",
-    src: "/partners/iiit-bhubaneswar.png",
-    url: "https://www.indocrypt2025.in/",
-  },
-  {
     name: "JJ Institute of Science",
     alt: "JJ Institute of Science partner logo",
     src: "/partners/jj-institute.png",
